@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La filosofía crítica de Kant — Historia de la Filosofía · IES Alquipir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAF9F5;
+            --bg-secondary: #F0EDE6;
+            --bg-card: #FFFFFF;
+            --text-primary: #2D2B28;
+            --text-secondary: #6B6560;
+            --text-tertiary: #9B9590;
+            --accent: #D97757;
+            --accent-hover: #C4603F;
+            --accent-light: rgba(217, 119, 87, 0.08);
+            --accent-light-hover: rgba(217, 119, 87, 0.14);
+            --blue-accent: #3B82B6;
+            --blue-light: rgba(59, 130, 182, 0.08);
+            --green-accent: #4A9D6E;
+            --green-light: rgba(74, 157, 110, 0.08);
+            --purple-accent: #7C5CBF;
+            --purple-light: rgba(124, 92, 191, 0.08);
+            --gold-accent: #B8860B;
+            --gold-light: rgba(184, 134, 11, 0.06);
+            --border: rgba(0, 0, 0, 0.06);
+            --border-hover: rgba(0, 0, 0, 0.12);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 2px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-lg: 0 4px 16px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+            --shadow-xl: 0 8px 32px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.75;
+            min-height: 100vh;
+            font-size: 19px;
+        }
+
+        /* ═══════════════════════════════════════════
+           TOP NAV BAR
+        ═══════════════════════════════════════════ */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 249, 245, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .topbar-logo {
+            font-family: 'Instrument Serif', serif;
+            font-size: 20px;
+            color: var(--accent);
+            letter-spacing: -0.5px;
+        }
+        .topbar-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border-hover);
+        }
+        .topbar-section {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-home:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+        .btn-home svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ═══════════════════════════════════════════
+           HERO
+        ═══════════════════════════════════════════ */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 56px 24px 40px;
+            text-align: center;
+        }
+        .hero-overline {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--accent);
+            margin-bottom: 16px;
+            padding: 6px 14px;
+            background: var(--accent-light);
+            border-radius: 20px;
+        }
+        .hero h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(32px, 5.5vw, 52px);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 28px;
+            line-height: 1.6;
+        }
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ═══════════════════════════════════════════
+           INTRO QUOTE
+        ═══════════════════════════════════════════ */
+        .intro-quote {
+            max-width: 1200px;
+            margin: 0 auto 48px;
+            padding: 28px 32px;
+            background: var(--gold-light);
+            border-left: 4px solid var(--gold-accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-family: 'Instrument Serif', serif;
+            font-size: 22px;
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .intro-quote cite {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-style: normal;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        /* ═══════════════════════════════════════════
+           CONTENT SECTIONS
+        ═══════════════════════════════════════════ */
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 48px;
+        }
+
+        .section-block {
+            margin-bottom: 48px;
+        }
+        .section-block-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+        .section-number {
+            font-family: 'Instrument Serif', serif;
+            font-size: 32px;
+            color: var(--accent);
+            opacity: 0.5;
+            line-height: 1;
+            min-width: 32px;
+        }
+        .section-label h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        .section-label .overline {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+        }
+
+        .text-content {
+            font-size: 19px;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+        .text-content p {
+            margin-bottom: 16px;
+        }
+        .text-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* ═══════════════════════════════════════════
+           CARDS GRID — Buttons that open modals
+        ═══════════════════════════════════════════ */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+        .card-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+        }
+        .card-btn:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .card-btn .card-icon {
+            font-size: 28px;
+            margin-bottom: 4px;
+        }
+        .card-btn .card-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 20px;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+        .card-btn .card-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .card-btn .card-arrow {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 18px;
+            color: var(--accent);
+            transition: transform 0.2s;
+        }
+        .card-btn:hover .card-arrow {
+            transform: translateX(3px);
+        }
+
+        /* Card color variants */
+        .card-btn.blue { border-left: 3px solid var(--blue-accent); }
+        .card-btn.blue:hover { background: var(--blue-light); }
+        .card-btn.green { border-left: 3px solid var(--green-accent); }
+        .card-btn.green:hover { background: var(--green-light); }
+        .card-btn.purple { border-left: 3px solid var(--purple-accent); }
+        .card-btn.purple:hover { background: var(--purple-light); }
+        .card-btn.gold { border-left: 3px solid var(--gold-accent); }
+        .card-btn.gold:hover { background: var(--gold-light); }
+        .card-btn.accent { border-left: 3px solid var(--accent); }
+        .card-btn.accent:hover { background: var(--accent-light); }
+
+        /* ═══════════════════════════════════════════
+           MODAL / OVERLAY
+        ═══════════════════════════════════════════ */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 500;
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-box {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            max-width: 920px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .modal-box.fullscreen {
+            max-width: 100%;
+            max-height: 100%;
+            height: 100vh;
+            border-radius: 0;
+        }
+        .modal-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            background: rgba(250, 249, 245, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+        }
+        .modal-topbar-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 18px;
+            color: var(--text-primary);
+        }
+        .modal-topbar-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .btn-modal-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .btn-modal-action:hover {
+            border-color: var(--border-hover);
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+        }
+        .btn-modal-action svg {
+            width: 18px;
+            height: 18px;
+        }
+        .modal-content {
+            padding: 32px;
+        }
+        .modal-content h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+        .modal-content h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 19px;
+            font-weight: 600;
+            margin: 24px 0 10px;
+            color: var(--text-primary);
+        }
+        .modal-content p {
+            margin-bottom: 14px;
+            font-size: 19px;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+        .modal-content ul, .modal-content ol {
+            margin: 10px 0 18px 20px;
+            font-size: 19px;
+            line-height: 1.8;
+        }
+        .modal-content li {
+            margin-bottom: 6px;
+        }
+        .modal-content .highlight-box {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 18px 0;
+            font-size: 18px;
+        }
+        .modal-content .quote-box {
+            background: var(--gold-light);
+            border-left: 3px solid var(--gold-accent);
+            padding: 16px 20px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 18px 0;
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        .modal-content .quote-box cite {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-style: normal;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-top: 8px;
+        }
+        .modal-content .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+            margin: 16px 0 20px;
+        }
+        .modal-content .concept-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+        }
+        .modal-content .concept-item strong {
+            display: block;
+            font-size: 17px;
+            margin-bottom: 4px;
+            color: var(--accent);
+        }
+        .modal-content .concept-item span {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .modal-content .thinker-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 14px 0;
+        }
+        .modal-content .thinker-card h4 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+        .modal-content .thinker-card .dates {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-bottom: 8px;
+        }
+        .modal-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+        .modal-content th {
+            background: var(--bg-secondary);
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            border-bottom: 2px solid var(--border);
+        }
+        .modal-content td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        /* ═══════════════════════════════════════════
+           FULL PAGE OVERLAY (sub-pages)
+        ═══════════════════════════════════════════ */
+        .page-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 400;
+            background: var(--bg-primary);
+            overflow-y: auto;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .page-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+        .page-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+            background: rgba(250, 249, 245, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+        }
+        .page-topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .btn-back:hover {
+            border-color: var(--border-hover);
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+        }
+        .btn-back svg {
+            width: 16px;
+            height: 16px;
+        }
+        .page-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
+        }
+        .page-content h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        .page-content h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 26px;
+            font-weight: 400;
+            margin: 32px 0 14px;
+            color: var(--text-primary);
+        }
+        .page-content h4 {
+            font-size: 19px;
+            font-weight: 600;
+            margin: 24px 0 10px;
+        }
+        .page-content p {
+            margin-bottom: 14px;
+            font-size: 19px;
+            line-height: 1.8;
+        }
+        .page-content ul, .page-content ol {
+            margin: 10px 0 18px 22px;
+            font-size: 19px;
+            line-height: 1.8;
+        }
+        .page-content li { margin-bottom: 6px; }
+        .page-content .highlight-box {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 18px 0;
+        }
+        .page-content .quote-box {
+            background: var(--gold-light);
+            border-left: 3px solid var(--gold-accent);
+            padding: 16px 20px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 18px 0;
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        .page-content .quote-box cite {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-style: normal;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-top: 8px;
+        }
+        .page-content .thinker-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 14px 0;
+        }
+        .page-content .thinker-card h4 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+        .page-content .thinker-card .dates {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-bottom: 8px;
+        }
+        .page-content .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+            margin: 16px 0 20px;
+        }
+        .page-content .concept-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+        }
+        .page-content .concept-item strong {
+            display: block;
+            font-size: 17px;
+            margin-bottom: 4px;
+            color: var(--accent);
+        }
+        .page-content .concept-item span {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════
+           KIALO / FORO SECTION
+        ═══════════════════════════════════════════ */
+        .foro-section {
+            max-width: 1200px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .foro-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        .foro-card-image {
+            flex: 0 0 auto;
+        }
+        .foro-card-image img {
+            height: 60px;
+            display: block;
+        }
+        .foro-card-text {
+            flex: 1;
+            min-width: 240px;
+        }
+        .foro-card-text h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .foro-card-text p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .foro-card-text .step-list {
+            list-style: none;
+            margin: 0 0 20px;
+            padding: 0;
+        }
+        .foro-card-text .step-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 17px;
+            color: var(--text-secondary);
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .btn-classroom {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-classroom:hover {
+            background: #1557b0;
+            transform: translateY(-1px);
+        }
+        .btn-classroom svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ═══════════════════════════════════════════
+           DIVIDER
+        ═══════════════════════════════════════════ */
+        .divider {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 24px;
+        }
+        .divider-line {
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ═══════════════════════════════════════════
+           FOOTER
+        ═══════════════════════════════════════════ */
+        .footer {
+            text-align: center;
+            padding: 32px 24px 40px;
+            font-size: 13px;
+            color: var(--text-tertiary);
+            border-top: 1px solid var(--border);
+        }
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-phi {
+            font-family: 'Instrument Serif', serif;
+            font-size: 28px;
+            color: var(--accent);
+            opacity: 0.35;
+            margin-bottom: 8px;
+        }
+
+        /* ═══════════════════════════════════════════
+           AMPLIAR BUTTON
+        ═══════════════════════════════════════════ */
+        .btn-ampliar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            background: var(--purple-accent);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+            margin-top: 12px;
+        }
+        .btn-ampliar:hover {
+            background: #6A4DAE;
+            transform: translateY(-1px);
+        }
+        .btn-ampliar svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ═══════════════════════════════════════════
+           ANIMATIONS
+        ═══════════════════════════════════════════ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ═══════════════════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════════════════ */
+        @media (max-width: 640px) {
+            body { font-size: 17px; }
+            .hero { padding: 40px 16px 32px; }
+            .hero h1 { font-size: 28px; }
+            .content { padding: 0 16px 40px; }
+            .modal-content { padding: 24px 18px; }
+            .modal-content p, .modal-content ul, .modal-content ol { font-size: 17px; }
+            .page-content { padding: 28px 16px 48px; }
+            .page-content p, .page-content ul, .page-content ol { font-size: 17px; }
+            .foro-card { padding: 24px; flex-direction: column; align-items: flex-start; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .topbar { padding: 10px 16px; }
+            .topbar-section { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     TOP BAR
+═══════════════════════════════════════════════════ -->
+<header class="topbar">
+    <div class="topbar-left">
+        <span class="topbar-logo">φ</span>
+        <div class="topbar-divider"></div>
+        <span class="topbar-section">Historia de la Filosofía · 2º Bachillerato</span>
+    </div>
+    <a class="btn-home" href="https://pacofilo.github.io/filoalquipir/" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Página principal
+    </a>
+</header>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════ -->
+<section class="hero">
+    <span class="hero-overline">Siglo XVIII · Revolución Copernicana</span>
+    <h1>La filosofía crítica de Kant:<br><em>el problema de la metafísica como saber</em></h1>
+    <p class="hero-subtitle">La Crítica de la razón pura (1781/1787) y la pregunta radical: ¿es posible la metafísica como ciencia? Una revolución en la filosofía que delimita los límites y la potencia de la razón humana.</p>
+    <div class="hero-meta">
+        <span>📚 Historia de la Filosofía</span>
+        <span>🎓 2º Bachillerato</span>
+        <span>🏫 IES Alquipir · Cehegín</span>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     INTRODUCTORY QUOTE
+═══════════════════════════════════════════════════ -->
+<div class="intro-quote reveal">
+    «La razón humana tiene el destino peculiar de verse acosada por cuestiones que no puede rechazar, porque le han sido impuestas por su propia naturaleza, pero que tampoco puede responder, porque superan todas las facultades de la razón humana.»
+    <cite>— Immanuel Kant, <em>Crítica de la razón pura</em> (Prefacio a la primera edición, 1781)</cite>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 1: Context — opens in modal
+═══════════════════════════════════════════════════ -->
+<div class="content">
+
+    <div class="section-block reveal">
+        <div class="section-block-header">
+            <div class="section-number">01</div>
+            <div class="section-label">
+                <span class="overline">Contexto e ideas clave</span>
+                <h2>¿Qué es la filosofía crítica de Kant?</h2>
+            </div>
+        </div>
+        <div class="text-content">
+            <p>Immanuel Kant (1724-1804), nacido en Königsberg (Prusia), es uno de los pensadores más influyentes de la historia de la filosofía. Su obra marca el fin de la filosofía moderna y el comienzo de la filosofía contemporánea. Tras el auge del racionalismo continental (Descartes, Spinoza, Leibniz, Wolff) y del empirismo británico (Locke, Berkeley, Hume), la metafísica tradicional —que pretendía conocer la realidad última mediante la razón pura— se encontraba en una profunda crisis.</p>
+            <p>Kant propone una <strong>filosofía crítica</strong>: no construye un nuevo sistema metafísico, sino que somete a examen riguroso las capacidades y límites de la razón humana. Su objetivo es responder a la pregunta central: <strong>¿es posible la metafísica como saber científico y riguroso?</strong></p>
+            <p>Pulsa en cada tarjeta para explorar en profundidad los contenidos:</p>
+        </div>
+    </div>
+
+    <!-- ─── CARDS: open modals ─── -->
+    <div class="cards-grid">
+
+        <button class="card-btn blue reveal" onclick="openModal('modal-contexto')">
+            <span class="card-icon">🌍</span>
+            <span class="card-title">El contexto histórico-filosófico</span>
+            <span class="card-desc">Racionalismo y empirismo: Hume despierta a Kant de su «sueño dogmático» y plantea la necesidad de una crítica radical de la razón.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn green reveal" onclick="openModal('modal-razon')">
+            <span class="card-icon">💡</span>
+            <span class="card-title">La razón crítica</span>
+            <span class="card-desc">¿Qué significa «crítica»? La revolución copernicana: el objeto se adapta al sujeto cognoscente. Una nueva forma de entender el conocimiento.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn purple reveal" onclick="openModal('modal-temas')">
+            <span class="card-icon">⚖️</span>
+            <span class="card-title">Grandes temas kantianos</span>
+            <span class="card-desc">Fenómeno y noúmeno, juicios sintéticos a priori, ideas de la razón y el problema de la metafísica como saber teórico.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+    </div>
+
+    <!-- ─── SECTION 2: sub-pages ─── -->
+    <div class="section-block reveal">
+        <div class="section-block-header">
+            <div class="section-number">02</div>
+            <div class="section-label">
+                <span class="overline">La Crítica de la razón pura</span>
+                <h2>Estructura y partes fundamentales</h2>
+            </div>
+        </div>
+        <div class="text-content">
+            <p>La <em>Crítica de la razón pura</em> (1781, segunda edición revisada en 1787) es la obra central de Kant. En ella divide la razón en tres grandes partes que responden a las preguntas fundamentales del conocimiento humano. Cada sección responde a una pregunta clave: ¿cómo es posible la matemática? ¿cómo es posible la física? ¿cómo es posible la metafísica?</p>
+            <p>Explora cada una en profundidad abriendo las páginas completas:</p>
+        </div>
+    </div>
+
+    <div class="cards-grid">
+
+        <button class="card-btn accent reveal" onclick="openPage('page-estetica')">
+            <span class="card-icon">👁️</span>
+            <span class="card-title">Estética trascendental</span>
+            <span class="card-desc">Espacio y tiempo como formas a priori de la sensibilidad. Fundamentación de las matemáticas como ciencia pura.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn gold reveal" onclick="openPage('page-logica')">
+            <span class="card-icon">🧩</span>
+            <span class="card-title">Lógica trascendental</span>
+            <span class="card-desc">Categorías del entendimiento y juicios sintéticos a priori. Fundamentación de la física newtoniana como ciencia.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn blue reveal" onclick="openPage('page-dialectica')">
+            <span class="card-icon">⚖️</span>
+            <span class="card-title">Dialéctica trascendental</span>
+            <span class="card-desc">Antinomias, paralogismos e ideales de la razón. Respuesta definitiva al problema de la metafísica como saber.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn green reveal" onclick="openModal('modal-legado')">
+            <span class="card-icon">🏛️</span>
+            <span class="card-title">Legado y actualidad</span>
+            <span class="card-desc">Influencia en el idealismo alemán, neokantismo, fenomenología y filosofía contemporánea. ¿Sigue vigente la crítica kantiana hoy?</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+    </div>
+
+    <!-- ─── SECTION 3: Vocabulary ─── -->
+    <div class="section-block reveal">
+        <div class="section-block-header">
+            <div class="section-number">03</div>
+            <div class="section-label">
+                <span class="overline">Para repasar</span>
+                <h2>Conceptos fundamentales</h2>
+            </div>
+        </div>
+        <div class="text-content">
+            <p>Antes de participar en el foro, repasa estos conceptos clave. Kant introduce un vocabulario técnico preciso que es esencial para comprender su pensamiento. Cada término tiene un significado muy concreto y revolucionario en la historia de la filosofía.</p>
+        </div>
+    </div>
+
+    <div class="cards-grid">
+        <button class="card-btn purple reveal" onclick="openModal('modal-conceptos')">
+            <span class="card-icon">📖</span>
+            <span class="card-title">Glosario kantiano</span>
+            <span class="card-desc">Definiciones detalladas y ejemplos de todos los términos esenciales de la filosofía crítica.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn accent reveal" onclick="openModal('modal-preguntas')">
+            <span class="card-icon">❓</span>
+            <span class="card-title">Preguntas para el foro</span>
+            <span class="card-desc">Cuestiones profundas y abiertas para orientar tu participación en Kialo Edu sobre los límites y la potencia de la razón.</span>
+            <span class="card-arrow">→</span>
+        </button>
+    </div>
+
+</div><!-- /content -->
+
+<!-- ═══════════════════════════════════════════════════
+     DIVIDER
+═══════════════════════════════════════════════════ -->
+<div class="divider"><hr class="divider-line"></div>
+
+<!-- ═══════════════════════════════════════════════════
+     KIALO EDU / FORO SECTION
+═══════════════════════════════════════════════════ -->
+<div class="foro-section reveal">
+    <div class="foro-card">
+        <div class="foro-card-image">
+            <svg width="180" height="48" viewBox="0 0 180 48" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <path d="M12 24 Q12 14 22 10" stroke="#4A9EDB" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M12 24 Q12 17 20 14" stroke="#4A9EDB" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M12 24 Q12 20 18 18" stroke="#4A9EDB" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M12 24 L16 22" stroke="#4A9EDB" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <circle cx="12" cy="24" r="3" fill="#4A9EDB"/>
+                    <text x="32" y="30" font-family="'DM Sans', sans-serif" font-size="24" font-weight="700" fill="#2D2B28">kialo</text>
+                    <text x="105" y="30" font-family="'DM Sans', sans-serif" font-size="24" font-weight="400" fill="#6B6560">edu</text>
+                </g>
+            </svg>
+        </div>
+        <div class="foro-card-text">
+            <h3>Participa en el foro de debate</h3>
+            <p>Tras estudiar en profundidad la filosofía crítica de Kant, participa en el foro de Kialo Edu. El debate se centrará en la vigencia del problema de la metafísica y en si la razón humana puede o no superar sus propios límites.</p>
+            <ul class="step-list">
+                <li>
+                    <span class="step-number">1</span>
+                    <span>Lee detenidamente todos los contenidos de esta web, incluyendo las páginas completas y los modales.</span>
+                </li>
+                <li>
+                    <span class="step-number">2</span>
+                    <span>Entra en <strong>Google Classroom</strong> con tu cuenta del centro.</span>
+                </li>
+                <li>
+                    <span class="step-number">3</span>
+                    <span>En Classroom encontrarás el <strong>enlace al foro de Kialo Edu</strong> para debatir con tus compañeros.</span>
+                </li>
+            </ul>
+            <a class="btn-classroom" href="https://classroom.google.com" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                Ir a Google Classroom
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════ -->
+<div class="divider"><hr class="divider-line"></div>
+<footer class="footer">
+    <div class="footer-phi">φ</div>
+    <p>Departamento de Filosofía · <a href="https://pacofilo.github.io/filoalquipir/" target="_blank">IES Alquipir</a> · Cehegín, Murcia<br>Francisco Jiménez Amor</p>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     MODALS
+═══════════════════════════════════════════════════════════════════ -->
+
+<!-- MODAL: Contexto histórico-filosófico -->
+<div class="modal-overlay" id="modal-contexto">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">El contexto histórico-filosófico</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                </button>
+                <button class="btn-modal-action" onclick="closeModal('modal-contexto')" title="Cerrar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>De Hume al «despertar» de Kant</h3>
+            <p>La filosofía del siglo XVIII se encontraba dividida en dos grandes corrientes. El <strong>racionalismo continental</strong> (Descartes, Spinoza, Leibniz y Christian Wolff) confiaba en que la razón pura, mediante ideas innatas y deducciones lógicas, podía alcanzar verdades absolutas sobre Dios, el alma y el mundo. Por su parte, el <strong>empirismo británico</strong> (Locke, Berkeley y especialmente David Hume) sostenía que todo conocimiento procede de la experiencia sensible y que las ideas que no se derivan de impresiones carecen de fundamento real.</p>
+            <p>Hume llevó el empirismo a sus últimas consecuencias: la causalidad no es una conexión necesaria objetiva, sino solo una costumbre psicológica fruto de la repetición; la sustancia, el yo y Dios son ficciones sin base empírica. Esto sumió la metafísica en el escepticismo total.</p>
+            <p>Kant, que había sido educado en el racionalismo wolffiano, reconoció que Hume lo «despertó de su sueño dogmático». Sin embargo, Kant no aceptó el escepticismo: las matemáticas y la física newtoniana son ciencias seguras y universales. Su tarea consistió en explicar <em>cómo</em> es posible ese conocimiento seguro y, al mismo tiempo, demostrar por qué la metafísica tradicional no puede alcanzar el mismo estatus científico.</p>
+
+            <div class="highlight-box">
+                <strong>Idea clave:</strong> Kant no elige un bando, sino que propone una síntesis trascendental: el conocimiento surge de la cooperación entre la sensibilidad (que proporciona el material empírico) y el entendimiento (que impone sus formas a priori). Esta síntesis permite salvar la ciencia sin caer en el dogmatismo ni en el escepticismo.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: La razón crítica -->
+<div class="modal-overlay" id="modal-razon">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">La razón crítica</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                </button>
+                <button class="btn-modal-action" onclick="closeModal('modal-razon')" title="Cerrar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>La revolución copernicana de Kant</h3>
+            <p>En el prólogo a la segunda edición de la <em>Crítica de la razón pura</em>, Kant compara su contribución con la revolución de Copérnico en astronomía. Hasta entonces se había supuesto que nuestro conocimiento debía conformarse a los objetos: el sujeto se adapta pasivamente al mundo. Kant invierte radicalmente esta perspectiva: son los objetos los que deben conformarse a nuestro conocimiento.</p>
+            <p>El sujeto cognoscente impone sus estructuras a priori (espacio, tiempo y categorías) a los datos de la experiencia. De este modo, el conocimiento ya no es un reflejo fiel de la realidad en sí, sino una construcción activa en la que el sujeto desempeña un papel legislador.</p>
+            <p>Esta revolución permite explicar la universalidad y necesidad de las ciencias (matemáticas y física) sin recurrir a ideas innatas ni a un empirismo radical. Al mismo tiempo, delimita claramente los límites de la razón: solo podemos conocer los fenómenos (las cosas tal como se nos aparecen), nunca las cosas en sí (noúmenos).</p>
+
+            <div class="quote-box">
+                «Hasta ahora se ha supuesto que todo nuestro conocimiento debe regularse por los objetos… Intentemos, pues, por una vez, si no será más fructífero para los problemas de la metafísica suponer que los objetos deben regularse por nuestro conocimiento.»
+                <cite>— Kant, <em>Crítica de la razón pura</em> (Prólogo a la segunda edición, 1787)</cite>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Para el debate:</strong> ¿Es la razón un espejo pasivo de la realidad (como creían los empiristas) o un legislador activo que estructura la experiencia (como propone Kant)? ¿Qué implicaciones tiene esta visión para la ciencia actual y para la inteligencia artificial?
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Grandes temas kantianos -->
+<div class="modal-overlay" id="modal-temas">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">Grandes temas kantianos</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                </button>
+                <button class="btn-modal-action" onclick="closeModal('modal-temas')" title="Cerrar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>Los ejes centrales de la filosofía crítica</h3>
+            <p>Kant transforma por completo el concepto tradicional de metafísica. Ya no se trata de conocer la realidad última (Dios, alma, mundo como totalidad), sino de investigar las condiciones de posibilidad del conocimiento humano. Los grandes temas que recorren toda su obra son:</p>
+
+            <div class="concept-grid">
+                <div class="concept-item">
+                    <strong>Fenómeno</strong>
+                    <span>La realidad tal como se nos aparece, estructurada necesariamente por las formas a priori de la sensibilidad (espacio y tiempo) y las categorías del entendimiento. Es el único ámbito accesible al conocimiento científico.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Noúmeno (cosa en sí)</strong>
+                    <span>La realidad independiente de nuestra facultad cognoscitiva. Podemos pensarla como límite negativo, pero nunca conocerla teóricamente. Es el ámbito de lo suprasensible.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Juicios sintéticos a priori</strong>
+                    <span>Juicios que amplían nuestro conocimiento (sintéticos) pero son universales y necesarios (a priori). Ejemplos: «Todo suceso tiene una causa» o las proposiciones matemáticas. Kant demuestra que son posibles gracias a las estructuras trascendentales del sujeto.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Ideas de la razón</strong>
+                    <span>Alma, Mundo y Dios. Son conceptos necesarios de la razón pura que regulan el pensamiento, pero no constituyen objetos de conocimiento. Sirven como ideas regulativas que guían la investigación científica sin pretender conocer lo incondicionado.</span>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Pregunta central de toda la Crítica:</strong> ¿Es posible la metafísica como saber teórico de lo suprasensible? La respuesta kantiana es clara y revolucionaria: no es posible como ciencia teórica, pero sí como disciplina crítica que establece los límites de la razón y abre el camino a una metafísica práctica fundada en la moral (razón práctica).
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Legado y actualidad -->
+<div class="modal-overlay" id="modal-legado">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">Legado y actualidad</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                </button>
+                <button class="btn-modal-action" onclick="closeModal('modal-legado')" title="Cerrar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>¿Sigue vigente la crítica kantiana en el siglo XXI?</h3>
+            <p>La influencia de Kant es inmensa y perdura hasta hoy. Su filosofía crítica inspiró directamente el idealismo alemán (Fichte, Schelling y Hegel), el neokantismo (Cohen, Cassirer, Windelband), la fenomenología (Husserl), la filosofía analítica (a través de la distinción entre analítico y sintético) y gran parte de la filosofía continental contemporánea.</p>
+            <p>En la era de la inteligencia artificial, la posverdad, el big data y los algoritmos, la pregunta kantiana sobre los límites del conocimiento y la diferencia entre fenómeno y noúmeno adquiere una relevancia inesperada: ¿puede una máquina “conocer” más allá de los datos que procesa? ¿Qué significa “realidad” cuando todo está mediado por interfaces y modelos predictivos?</p>
+            <p>Kant no destruyó la metafísica: la transformó. De pretensión de conocimiento teórico absoluto pasó a ser una disciplina crítica que limita la razón especulativa y abre el espacio a la razón práctica (moral) y a la fe racional.</p>
+
+            <div class="quote-box">
+                «Kant no destruyó la metafísica: la transformó en una disciplina que establece los límites de la razón y abre el espacio a la fe práctica.»
+                <cite>— Interpretación clásica de la filosofía crítica</cite>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Glosario -->
+<div class="modal-overlay" id="modal-conceptos">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">Glosario kantiano</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                </button>
+                <button class="btn-modal-action" onclick="closeModal('modal-conceptos')" title="Cerrar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>Conceptos esenciales de la filosofía crítica</h3>
+            <div class="concept-grid">
+                <div class="concept-item"><strong>Trascendental</strong><span>Se refiere a las condiciones a priori de posibilidad del conocimiento en general. No es lo mismo que “trascendente” (más allá de la experiencia).</span></div>
+                <div class="concept-item"><strong>Estética trascendental</strong><span>Teoría del espacio y el tiempo como formas puras e innatas de la sensibilidad. Fundamenta las matemáticas.</span></div>
+                <div class="concept-item"><strong>Categorías del entendimiento</strong><span>12 conceptos puros (causalidad, sustancia, unidad, pluralidad, etc.) que el entendimiento aplica necesariamente a la experiencia.</span></div>
+                <div class="concept-item"><strong>Antinomias de la razón pura</strong><span>Cuatro contradicciones inevitables que surgen cuando la razón pretende conocer lo incondicionado (ej.: el mundo tiene o no tiene principio en el tiempo).</span></div>
+                <div class="concept-item"><strong>Ideas regulativas</strong><span>Alma, Mundo y Dios. No son objetos de conocimiento, sino principios que regulan y guían la investigación científica y moral.</span></div>
+                <div class="concept-item"><strong>Fenómeno / Noúmeno</strong><span>Fenómeno: realidad tal como aparece. Noúmeno: realidad en sí, inaccesible al conocimiento teórico.</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Preguntas para el foro -->
+<div class="modal-overlay" id="modal-preguntas">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">Preguntas para el foro</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                </button>
+                <button class="btn-modal-action" onclick="closeModal('modal-preguntas')" title="Cerrar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>Cuestiones de reflexión para el foro Kialo Edu</h3>
+            <p>Estas preguntas te ayudarán a preparar intervenciones argumentadas y profundas. Elige las que más te interesen y apoya tus opiniones con referencias concretas a la <em>Crítica de la razón pura</em>.</p>
+            <ol>
+                <li>¿Tiene razón Kant al afirmar que la metafísica tradicional no puede ser una ciencia teórica? ¿Por qué?</li>
+                <li>¿La distinción entre fenómeno y noúmeno resuelve el problema de la metafísica o simplemente lo desplaza?</li>
+                <li>¿Puede la razón humana criticarse a sí misma sin caer en contradicciones inevitables? ¿Es la autocrítica la mayor fortaleza o el mayor límite de la razón?</li>
+                <li>En la era de la inteligencia artificial y los algoritmos, ¿siguen vigentes los límites kantianos del conocimiento? ¿Puede una máquina superar la barrera del noúmeno?</li>
+                <li>¿Es posible una “metafísica práctica” después de Kant, tal como él mismo propone en la razón práctica?</li>
+            </ol>
+            <div class="highlight-box">
+                <strong>Recuerda:</strong> En Kialo Edu el objetivo es argumentar con rigor, no simplemente opinar. Cada intervención debe incluir referencias textuales, ejemplos históricos o conexiones con la actualidad.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     FULL PAGES (overlays)
+═══════════════════════════════════════════════════════════════════ -->
+
+<!-- PAGE: Estética trascendental -->
+<div class="page-overlay" id="page-estetica">
+    <div class="page-topbar">
+        <div class="page-topbar-left">
+            <button class="btn-back" onclick="closePage('page-estetica')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                Volver
+            </button>
+            <span class="modal-topbar-title">Estética trascendental</span>
+        </div>
+    </div>
+    <div class="page-content">
+        <h2>Estética trascendental</h2>
+        <p>Esta es la primera gran parte de la <em>Crítica de la razón pura</em>. Kant analiza las condiciones a priori de la sensibilidad (la facultad que recibe las impresiones del mundo exterior).</p>
+        
+        <h3>El espacio y el tiempo como formas puras de la intuición</h3>
+        <p>Kant sostiene que el espacio no es una realidad objetiva existente fuera de nosotros, sino la forma a priori de la intuición externa: todo lo que percibimos lo percibimos necesariamente en el espacio. Del mismo modo, el tiempo es la forma a priori de la intuición interna: toda experiencia se da en el tiempo.</p>
+        <p>Estas formas no se derivan de la experiencia (no son empíricas), sino que son condiciones previas que hacen posible cualquier experiencia. Son universales y necesarias para todo sujeto humano.</p>
+        
+        <h3>Consecuencia para las matemáticas</h3>
+        <p>Gracias a estas formas a priori, las matemáticas (geometría y aritmética) son posibles como ciencias puras y sintéticas a priori: sus proposiciones son universales, necesarias y amplían nuestro conocimiento sin depender de la experiencia.</p>
+        
+        <div class="highlight-box">
+            <strong>Consecuencia filosófica:</strong> Todo conocimiento sensible está necesariamente condicionado por el sujeto. Nunca conocemos la realidad “en sí”, sino siempre tal como aparece estructurada por nuestras formas de sensibilidad.
+        </div>
+    </div>
+</div>
+
+<!-- PAGE: Lógica trascendental -->
+<div class="page-overlay" id="page-logica">
+    <div class="page-topbar">
+        <div class="page-topbar-left">
+            <button class="btn-back" onclick="closePage('page-logica')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                Volver
+            </button>
+            <span class="modal-topbar-title">Lógica trascendental</span>
+        </div>
+    </div>
+    <div class="page-content">
+        <h2>Lógica trascendental</h2>
+        <p>Segunda parte de la Crítica. Kant estudia las condiciones a priori del entendimiento (la facultad que piensa y juzga los datos proporcionados por la sensibilidad).</p>
+        
+        <h3>Las categorías del entendimiento</h3>
+        <p>Kant deduce 12 categorías puras (cantidad: unidad, pluralidad, totalidad; cualidad: realidad, negación, limitación; relación: inherencia, causalidad, comunidad; modalidad: posibilidad, existencia, necesidad). Estas categorías son conceptos a priori que el entendimiento aplica necesariamente a toda experiencia posible.</p>
+        
+        <h3>Los juicios sintéticos a priori</h3>
+        <p>La física newtoniana se basa en juicios de este tipo (por ejemplo: “todo cambio tiene una causa”). Kant demuestra que son posibles gracias a las categorías: el entendimiento impone orden y conexión a los datos sensibles, haciendo posible el conocimiento científico universal y necesario.</p>
+        
+        <div class="highlight-box">
+            <strong>Conclusión:</strong> La ciencia es posible porque el sujeto no es un espectador pasivo, sino un legislador que estructura la experiencia mediante sus formas y categorías a priori.
+        </div>
+    </div>
+</div>
+
+<!-- PAGE: Dialéctica trascendental -->
+<div class="page-overlay" id="page-dialectica">
+    <div class="page-topbar">
+        <div class="page-topbar-left">
+            <button class="btn-back" onclick="closePage('page-dialectica')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                Volver
+            </button>
+            <span class="modal-topbar-title">Dialéctica trascendental</span>
+        </div>
+    </div>
+    <div class="page-content">
+        <h2>Dialéctica trascendental</h2>
+        <p>Tercera y última parte de la Crítica. Kant analiza lo que ocurre cuando la razón pura pretende ir más allá de la experiencia posible y conocer lo incondicionado (Dios, el alma, el mundo como totalidad).</p>
+        
+        <h3>Las ilusiones inevitables de la razón</h3>
+        <p>La razón genera tres tipos de ilusiones:</p>
+        <ul>
+            <li><strong>Paralogismos</strong>: ilusiones sobre el alma como sustancia simple e inmortal.</li>
+            <li><strong>Antinomias</strong>: cuatro contradicciones inevitables (el mundo tiene o no tiene principio en el tiempo y el espacio; todo está compuesto de partes simples o no; hay causalidad libre o solo necesidad natural; existe un ser necesario o no).</li>
+            <li><strong>Ideales de la razón</strong>: Dios como ideal regulativo, no como objeto demostrable.</li>
+        </ul>
+        
+        <p>Kant concluye que la metafísica tradicional (psicología racional, cosmología racional y teología racional) no puede ser una ciencia teórica porque pretende conocer lo que está más allá de toda experiencia posible.</p>
+        
+        <div class="highlight-box">
+            <strong>Conclusión positiva:</strong> La crítica no destruye la metafísica, sino que la transforma: ya no es conocimiento teórico de lo absoluto, sino disciplina que limita la razón especulativa y abre el espacio a la razón práctica y a la fe moral fundada en el imperativo categórico.
+        </div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════════════════ -->
+<script>
+// ── Reveal on scroll ──
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── Modals ──
+function openModal(id) {
+    const overlay = document.getElementById(id);
+    overlay.style.display = 'flex';
+    requestAnimationFrame(() => overlay.classList.add('active'));
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+    const overlay = document.getElementById(id);
+    const box = overlay.querySelector('.modal-box');
+    box.classList.remove('fullscreen');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { overlay.style.display = 'none'; }, 300);
+}
+
+function toggleFullscreen(btn) {
+    const box = btn.closest('.modal-box');
+    box.classList.toggle('fullscreen');
+    const isFS = box.classList.contains('fullscreen');
+    btn.innerHTML = isFS
+        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>';
+    btn.title = isFS ? 'Salir de pantalla completa' : 'Pantalla completa';
+}
+
+// Close modal clicking overlay background
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal(overlay.id);
+    });
+});
+
+// ── Full pages ──
+function openPage(id) {
+    const page = document.getElementById(id);
+    page.style.display = 'block';
+    requestAnimationFrame(() => page.classList.add('active'));
+    document.body.style.overflow = 'hidden';
+    page.scrollTop = 0;
+}
+
+function closePage(id) {
+    const page = document.getElementById(id);
+    page.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { page.style.display = 'none'; }, 300);
+}
+
+// ── Escape key ──
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m.id));
+        document.querySelectorAll('.page-overlay.active').forEach(p => closePage(p.id));
+    }
+});
+</script>
+
+</body>
+</html>
